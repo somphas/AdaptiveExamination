@@ -1,4 +1,5 @@
 package models;
 
-public class ListeningModel {
+public class ListeningModel extends ExamModel {
+
 }

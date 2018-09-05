@@ -1,4 +1,7 @@
 package models;
 
-public class RecogInfoModel {
+public class RecogInfoModel extends ExamModel{
+    private String title;
+    private String category;
+
 }
