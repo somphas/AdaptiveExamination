@@ -1,8 +1,9 @@
-package sample;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import models.Answer;
 import models.Exam;
@@ -15,8 +16,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
 
+/*
         //testing
         Answer a1 = new Answer("10 km", true);
         Answer a2 = new Answer("11 km", false);
@@ -42,12 +43,13 @@ public class Main extends Application {
         quizzes.add(writing);
 
         Exam exam1 = new Exam(0,quizzes);
-        exam1.print();
+        exam1.print();*/
 
-        /*
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();*/
+        Parent root = FXMLLoader.load(getClass().getResource("StudentInformation.fxml"));
+        primaryStage.setTitle("Student Information");
+        primaryStage.setScene(new Scene(root,560 , 530));
+        primaryStage.setResizable(false);
+        primaryStage.show();
     }
 
 
