@@ -38,7 +38,6 @@ public class MainController {
     private void enterMainScreen()
     {
       //  txtValidation.setText("test");
-        System.out.print("click button next");
 
     }
 }
