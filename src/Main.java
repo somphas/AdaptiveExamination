@@ -1,3 +1,4 @@
+import controllers.MathController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -10,19 +11,19 @@ import models.Exam;
 import models.Question;
 import models.Quiz;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public class Main extends Application {
-
+    static MathController m;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-/*
         //testing
-        Answer a1 = new Answer("10 km", true);
-        Answer a2 = new Answer("11 km", false);
-        Answer a3 = new Answer("12 km", false);
-        Answer a4 = new Answer("13 km", false);
+        Answer a1 = new Answer("Median", true);
+        Answer a2 = new Answer("Mode", false);
+        Answer a3 = new Answer("Mean", false);
+        Answer a4 = new Answer("None", false);
 
         ArrayList<Answer> listOfAnswer = new ArrayList<Answer>();
         listOfAnswer.add(a1);
@@ -30,7 +31,7 @@ public class Main extends Application {
         listOfAnswer.add(a3);
         listOfAnswer.add(a4);
 
-        Question questionMath1 = new Question("how long from home to city?",listOfAnswer, "2", 1);
+        Question questionMath1 = new Question("In statistics, the middle value of an ordered set of values is called what?",listOfAnswer, "tough", 1);
         Question questionMath2 = new Question("how long from home to market?",listOfAnswer, "2", 1);
         ArrayList<Question> listOfQuestion = new ArrayList<Question>();
         listOfQuestion.add(questionMath1);
@@ -42,10 +43,22 @@ public class Main extends Application {
         quizzes.add(math);
         quizzes.add(writing);
 
+        quizzes.get(0).getQuestions().get(0);
         Exam exam1 = new Exam(0,quizzes);
-        exam1.print();*/
-
+      //  exam1.print();
+/*
         Parent root = FXMLLoader.load(getClass().getResource("StudentInformation.fxml"));
+        primaryStage.setTitle("Student Information");
+        primaryStage.setScene(new Scene(root,560 , 530));
+        primaryStage.setResizable(false);
+        primaryStage.show();*/
+
+
+
+        FXMLLoader loader= new FXMLLoader(getClass().getResource("views/MathTestView.fxml"));
+        Parent root = (Parent) loader.load();
+        m=(MathController)loader.getController();
+        m.test(quizzes);
         primaryStage.setTitle("Student Information");
         primaryStage.setScene(new Scene(root,560 , 530));
         primaryStage.setResizable(false);
