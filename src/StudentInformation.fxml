@@ -7,19 +7,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="530.0" prefWidth="550.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+<AnchorPane prefHeight="530.0" prefWidth="550.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StudentController">
    <children>
       <Label layoutX="40.0" layoutY="72.0" text="ID*" />
       <Label layoutX="36.0" layoutY="125.0" text="Name*" />
       <Label layoutX="33.0" layoutY="172.0" text="School*" />
       <Label layoutX="29.0" layoutY="234.0" text="Term" />
-      <CheckBox layoutX="115.0" layoutY="426.0" mnemonicParsing="false" text="Accept" />
+      <CheckBox fx:id="chTermCon" layoutX="115.0" layoutY="426.0" mnemonicParsing="false" onMouseClicked="#acceptTerm" text="Accept" />
       <TextField fx:id="txtID" layoutX="121.0" layoutY="72.0" />
       <TextField fx:id="txtName" layoutX="121.0" layoutY="119.0" />
       <TextField fx:id="txtSchool" layoutX="121.0" layoutY="166.0" prefWidth="403.0" />
-      <TextArea editable="false" layoutX="115.0" layoutY="234.0" prefHeight="181.0" prefWidth="410.0" />
-      <Button fx:id="btnNext" layoutX="444.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#enterMainScreen" prefHeight="40.0" prefWidth="80.0" text="Next" />
-      <Label fx:id="lblValidation" layoutX="244.0" layoutY="432.0" text="Label" textFill="#e82626">
+      <TextArea fx:id="txtareaTerm" editable="false" layoutX="115.0" layoutY="234.0" prefHeight="181.0" prefWidth="410.0" text="Term and condition" />
+      <Button fx:id="btnNext" disable="true" layoutX="444.0" layoutY="463.0" mnemonicParsing="false" onMouseClicked="#enterMainScreen" prefHeight="40.0" prefWidth="80.0" text="Next" />
+      <Label fx:id="lblValidation" layoutX="244.0" layoutY="432.0" text="Label" textFill="#e82626" visible="false">
          <font>
             <Font size="13.0" />
          </font>

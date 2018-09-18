@@ -8,36 +8,38 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Screen;
-
-
+import javafx.stage.Stage;
+import models.StudentModel;
 
 
 public class MainController {
 
-    @FXML private Label lblter;
-    @FXML private Button btnNext;
-    @FXML private TextField txtName;
+    private StudentModel mStudent;
 
+    @FXML private Button btnStart;
     @FXML
     private void logIn() throws ClassNotFoundException {
 
 
         try {
-           /* Parent root = FXMLLoader.load(getClass().getResource("views/MainView.fxml"));
-            primaryStage.setTitle("Adaptive Test");
-            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
-            primaryStage.setX(screenBounds.getMinX());
-            primaryStage.setY(screenBounds.getMinY());
-            primaryStage.setScene(new Scene(root,screenBounds.getWidth() , screenBounds.getHeight()));
-            primaryStage.setResizable(false);
-            primaryStage.show();*/
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../views/Login.fxml"));
+            Parent root2 = (Parent) fxmlLoader.load();
+            LoginController l= fxmlLoader.getController();
+
+            l.initialStudentModel(this.mStudent);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root2,560 , 530));
+            stage.setResizable(false);
+            stage.show();
+            btnStart.setDisable(true);
+        } catch(Exception e) {
+            e.printStackTrace();
         }
-        catch(Exception e){}
     }
-    @FXML
-    private void enterMainScreen()
+    public void setStudent(StudentModel mStudent)
     {
-      //  txtValidation.setText("test");
+        this.mStudent=mStudent;
 
     }
+
 }
